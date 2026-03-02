@@ -1,18 +1,22 @@
 import React from 'react';
-// Hum yahan BrowserRouter nahi laga rahe taaki "Double Router" ka conflict na ho
-import { Routes, Route } from 'react-router-dom'; 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemList from './ItemList';
 import ItemDetail from './ItemDetail';
 
 const App = () => {
   return (
-    // Yahan koi extra <li>, <nav> ya faltu tags nahi hone chahiye!
-    <div>
-      <Routes>
-        <Route path="/" element={<ItemList />} />
-        <Route path="/items/:id" element={<ItemDetail />} />
-      </Routes>
-    </div>
+    // Is <BrowserRouter> ke bina Routes kaam nahi karenge
+    <BrowserRouter>
+      <div id="main">
+        <Routes>
+          {/* Homepage Route */}
+          <Route path="/" element={<ItemList />} />
+          
+          {/* Dynamic Detail Route */}
+          <Route path="/items/:id" element={<ItemDetail />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 
