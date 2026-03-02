@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ItemList = () => {
-    const items = [1, 2, 3, 4];
+    const items = [1, 2, 3];
   return (
     <div>
       <h1>Item List</h1>
